@@ -15,10 +15,7 @@
 int _tmain(int argc, _TCHAR* argv[])
 {
 	ColaM* k=new ColaM();
-	k->Poner(45);
-	k->Poner(55);
-	k->Poner(65);
-	k->Poner(75);
+    k->Poner(45);
 	system("pause");
 	return 0;
 }

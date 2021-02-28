@@ -23,19 +23,19 @@ void ColaM::Poner(int E){
 	if (aux!=NULO) {
 		mem->poner_dato(aux,elementoC,E);
 		mem->poner_dato(aux,sigC,NULO);
+		mem->mostrar_memoria();    //test
 		if (Vacia()){
 			ini=aux;
 			fin=aux;
 		}else{
 			mem->poner_dato(fin,sigC,aux);
-			fin=aux;   //fin=al espacio en la cual comenzo el string
+            cout<<"Fin: "<<fin<<endl;
+			fin=aux;
 		}
 	}else{
 		cout<<"Error\n";
 	}
-	mem->mostrar_memoria();    //test
-	cout<<"ini1: "<<ini<<endl;
-	cout<<"Fin1: "<<fin<<endl;
+		mem->mostrar_memoria();    //test
 }
 
 void ColaM::Sacar(int &E){

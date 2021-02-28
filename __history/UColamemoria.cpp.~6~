@@ -12,6 +12,7 @@ ColaM::ColaM(){
 	mem=new CSMemoria();
 	int ini=-1;
 	int fin=-1;
+	mem->mostrar_memoria();    //test
 }
 
 bool ColaM::Vacia(){
@@ -19,23 +20,21 @@ bool ColaM::Vacia(){
 }
 
 void ColaM::Poner(int E){
-	int aux=mem->new_espacio(datoC); //Pedir Espacio de memoria para Nodo
+	int aux= 0; //Pedir Espacio de memoria para Nodo
 	if (aux!=NULO) {
-		mem->poner_dato(aux,elementoC,E);
+		mem->poner_dato(aux,datoC,elementoC);
 		mem->poner_dato(aux,sigC,NULO);
-		if (Vacia()){
+		if (Vacia()) {
 			ini=aux;
 			fin=aux;
 		}else{
 			mem->poner_dato(fin,sigC,aux);
-			fin=aux;   //fin=al espacio en la cual comenzo el string
+			fin=aux;
 		}
 	}else{
 		cout<<"Error\n";
 	}
-	mem->mostrar_memoria();    //test
-	cout<<"ini1: "<<ini<<endl;
-	cout<<"Fin1: "<<fin<<endl;
+    	mem->mostrar_memoria();    //test
 }
 
 void ColaM::Sacar(int &E){
