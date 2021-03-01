@@ -1,0 +1,18 @@
+//---------------------------------------------------------------------------
+
+#ifndef UColalistapunteroH
+#define UColalistapunteroH
+//---------------------------------------------------------------------------
+#include "UListapuntero.h"
+
+class ColaLP{
+	private:
+		ListaP* l;
+		int init,fin;
+	public:
+		ColaLP()
+		bool Vacia();
+		void Poner(int E);
+		void Sacar(int &E);
+		int Primero();		string Mostrar();};
+#endif

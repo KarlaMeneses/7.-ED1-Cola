@@ -114,9 +114,33 @@
         <CppCompile Include="Principal.cpp">
             <BuildOrder>1</BuildOrder>
         </CppCompile>
+        <CppCompile Include="UColalistamemoria.cpp">
+            <DependentOn>UColalistamemoria.h</DependentOn>
+            <BuildOrder>5</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="UColalistapuntero.cpp">
+            <DependentOn>UColalistapuntero.h</DependentOn>
+            <BuildOrder>4</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="UColalistavector.cpp">
+            <DependentOn>UColalistavector.h</DependentOn>
+            <BuildOrder>6</BuildOrder>
+        </CppCompile>
         <CppCompile Include="UColamemoria.cpp">
             <DependentOn>UColamemoria.h</DependentOn>
             <BuildOrder>2</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="UListamemoria.cpp">
+            <DependentOn>UListamemoria.h</DependentOn>
+            <BuildOrder>7</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="UListapuntero.cpp">
+            <DependentOn>UListapuntero.h</DependentOn>
+            <BuildOrder>8</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="UListavector.cpp">
+            <DependentOn>UListavector.h</DependentOn>
+            <BuildOrder>9</BuildOrder>
         </CppCompile>
         <CppCompile Include="Umemoria.cpp">
             <DependentOn>Umemoria.h</DependentOn>
