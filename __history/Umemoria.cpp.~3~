@@ -223,5 +223,5 @@ void CSMemoria::mostrar_memoria(){
 		<< "+" << endl;
 	cout.fill(' ');
 	//setw() = espacios en blancos hasta cierto punto
-    //cout<<"Libre: "<<Libre<<endl;
+    cout<<"Libre: "<<Libre<<endl;
 }

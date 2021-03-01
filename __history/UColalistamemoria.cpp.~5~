@@ -26,6 +26,7 @@ void ColaLSM::Poner(int E){
 void ColaLSM::Sacar(int &E){
 	if (!Vacia()) {
 		l->recupera(l->primero(),E);
+		cout<<"sssss:  "<<E<<endl;
 		l->suprime(l->primero());
 
 	}else{
@@ -36,7 +37,7 @@ void ColaLSM::Sacar(int &E){
 int ColaLSM::Primero(){	int E;	l->recupera(0,E);	return E;}string ColaLSM::Mostrar(){
 	cout<<l->mostrar()<<endl;
 	int E;
-	string k="COLA: << ";
+	string k="<< ";
 	ColaLSM* aux=new ColaLSM();
 	while (!Vacia()){
 		Sacar(E);
@@ -50,6 +51,7 @@ int ColaLSM::Primero(){	int E;	l->recupera(0,E);	return E;}string ColaLSM:
 		aux->Sacar(E);
 		Poner(E);
 	}
-	return k+" <<\n";
+	cout<<l->mostrar()<<endl;
+	return k+" <<";
 }
 

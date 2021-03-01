@@ -18,25 +18,18 @@ bool ColaLSM::Vacia(){
 }
 
 void ColaLSM::Poner(int E){
-	l->inserta(l->fin(),E);
-	//l->inserta_ultimo(E);
-	//l->mostrar();
+	l->inserta(l->primero(),E);
 }
 
 void ColaLSM::Sacar(int &E){
-	if (!Vacia()) {
-		l->recupera(l->primero(),E);
-		l->suprime(l->primero());
-
-	}else{
-		cout<<"La memoria (COLA) ya esta vacia no se puede sacar elemento"<<endl;
-	}
+	l->recupera(l->fin(),E);
+	l->suprime(l->fin());
 }
 
-int ColaLSM::Primero(){	int E;	l->recupera(0,E);	return E;}string ColaLSM::Mostrar(){
-	cout<<l->mostrar()<<endl;
+int ColaLSM::Primero(){	int E;	l->recupera(l->fin(),E);	return E;}string ColaLSM::Mostrar(){
+	l->mostrar();
 	int E;
-	string k="COLA: << ";
+	string k="<< ";
 	ColaLSM* aux=new ColaLSM();
 	while (!Vacia()){
 		Sacar(E);
@@ -50,6 +43,6 @@ int ColaLSM::Primero(){	int E;	l->recupera(0,E);	return E;}string ColaLSM:
 		aux->Sacar(E);
 		Poner(E);
 	}
-	return k+" <<\n";
+	return k+" <<";
 }
 

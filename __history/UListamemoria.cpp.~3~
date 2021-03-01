@@ -13,10 +13,8 @@ ListaSM::ListaSM(){
 }
 
 int ListaSM::fin(){
-	if (vacia()){
-		//cout << "ERROR: LISTA VACIA22222\n";
-		return NULO;
-	}
+	if (vacia())
+		cout << "ERROR: LISTA VACIA\n";
 	else {
 		int x = PtrElementos;
 		int PtrFin;
@@ -32,12 +30,12 @@ int ListaSM::primero(){
 	if (!vacia())
 		return PtrElementos;
 	else
-		cout << "ERROR: LISTA VACIA1111\n";
+		cout << "ERROR: LISTA VACIA\n";
 }
 
 int ListaSM::siguiente(int dir){
 	if (vacia())
-		cout << "ERROR: LISTA VACIA666\n";
+		cout << "ERROR: LISTA VACIA\n";
 	else {
 		if (dir == fin())
 			cout << "ERROR: DIRECCION ERRONEA\n";
@@ -48,7 +46,7 @@ int ListaSM::siguiente(int dir){
 
 int ListaSM::anterior(int dir){
 	if (vacia()){
-		cout << "ERROR: LISTA VACIA999\n";
+		cout << "ERROR: LISTA VACIA\n";
 		return NULO;
 	}
 	else {
@@ -76,7 +74,7 @@ bool ListaSM::vacia(){
 
 void ListaSM::recupera(int dir,int &E){
 	if (vacia())
-		cout << "ERROR: LISTA VACIA55555\n";
+		cout << "ERROR: LISTA VACIA\n";
 	else
 		E=mem->obtener_dato(dir, elementL); // d->elemento;
 }
@@ -92,8 +90,6 @@ void ListaSM::inserta(int dir,int element){
 		mem->poner_dato(x, elementL, element); // x->elemento = e;
 		mem->poner_dato(x, sigL, NULO); // x->sig = NULL;
 		//cout<<mostrar(); //test
-//		cout<<"dir:  "<<dir<<endl; //test
-//		cout<<"fin:  "<<fin()<<endl; //test
 		if (vacia()) {
 			PtrElementos=x;
 			longitud=1;
@@ -101,8 +97,8 @@ void ListaSM::inserta(int dir,int element){
 		else{
 			longitud++;
 			//PtrElementos=x;
-			//cout<<dir<<endl; //test
-
+			cout<<dir<<endl; //test
+			//cout<<fin()<<endl; //test
 			if (dir==fin()) {
 				mem->poner_dato(fin(), sigL, x); // ant->sig = x;
 			}else{
@@ -152,18 +148,14 @@ void ListaSM::inserta_ultimo(int element){
 void ListaSM::suprime(int dir){
 	//desplazamiento(dir);
 	if (longitud==0) {
-		cout << "Error: La lista esta vacia7777\n";
+		cout << "Error: La lista esta vacia\n";
 	}
 	else{
-		longitud--;
 		if (dir==PtrElementos) { //primer nodo
 			int x=PtrElementos;
-			//PtrElementos=mem->obtener_dato(PtrElementos, sigL);//ptr elemen siempre es 0
+			PtrElementos=mem->obtener_dato(PtrElementos, sigL);
 			// ptr_elementos->sig;
 			mem->delete_espacio(x); // delete(x);
-			if (longuitud()==0) {
-				PtrElementos=NULO;
-			}
 		}
 		else{
 			int ant=anterior(dir);
@@ -172,7 +164,7 @@ void ListaSM::suprime(int dir){
 			mem->delete_espacio(dir); // delete(d);
 		}
 	}
-	//longitud--;
+	longitud--;
 }
 
 
@@ -180,7 +172,7 @@ void ListaSM::modifica(int dir,int element){	if (vacia()){		cout << "Error: La
 	}	else{		mem->poner_dato(dir, elementL, element); // d->elemento = e;//modificar elemento que tiene por otro
 	}}string ListaSM::mostrar(){
 	mem->mostrar_memoria();
-	string s = "LISTA: [";
+	string s = "[";
 	int aux = PtrElementos;
 	while (aux != NULO){
 		int el = mem->obtener_dato(aux, elementL); // aux->elemento

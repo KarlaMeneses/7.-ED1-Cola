@@ -72,15 +72,17 @@ int _tmain(int argc, _TCHAR* argv[])
 	ColaLSM* k=new ColaLSM();
 	k->Poner(10);
 	k->Poner(20);
-   	k->Poner(30);
+	k->Poner(30);
 	k->Poner(40);
 	cout<<k->Mostrar();
-	int E;
-	k->Sacar(E);
-	k->Sacar(E);
-	k->Sacar(E);
-	k->Sacar(E);
-	cout<<k->Mostrar();
+//	int E;
+//	k->Sacar(E);
+//	cout<<k->Mostrar();
+//	k->Sacar(E);
+//	cout<<k->Mostrar();
+//	k->Sacar(E);
+//	cout<<k->Mostrar();
+
 	system("pause");
 	return 0;
 }

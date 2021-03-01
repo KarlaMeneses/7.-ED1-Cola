@@ -19,7 +19,7 @@
 using namespace std;
 
 int _tmain(int argc, _TCHAR* argv[])
-{    /*{ Implementaci髇 con simulaci髇 de Memoria}
+{    /*{ Implementaci贸n con simulaci贸n de Memoria}
 	ColaM* k=new ColaM();
 	k->Poner(45);
 	k->Poner(55);
@@ -34,12 +34,12 @@ int _tmain(int argc, _TCHAR* argv[])
 	int E;
 	k->Sacar(E);
 	k->Sacar(E);
-//	k->Poner(105);
-//	k->Poner(115);
-//	k->Poner(125);
+	k->Poner(105);
+	k->Poner(115);
+	k->Poner(125);
 	k->Mostrar();     */
 
-	/* { Implementaci髇 con lista puntero}
+	/* { Implementaci贸n con lista puntero}
 	ColaLP* k=new ColaLP();
 	k->Poner(10);
 	k->Poner(20);
@@ -54,7 +54,7 @@ int _tmain(int argc, _TCHAR* argv[])
 	k->Sacar(E);
 	cout<<k->Mostrar();  */
 
-	/* { Implementaci髇 con lista vector}
+	/* { Implementaci贸n con lista vector}
 	ColaLP* k=new ColaLP();
 	k->Poner(10);
 	k->Poner(20);
@@ -69,6 +69,7 @@ int _tmain(int argc, _TCHAR* argv[])
 	k->Sacar(E);
 	cout<<k->Mostrar();  */
 
+	/* { Implementaci贸n con lista simulacion de memoria}
 	ColaLSM* k=new ColaLSM();
 	k->Poner(10);
 	k->Poner(20);
@@ -80,7 +81,7 @@ int _tmain(int argc, _TCHAR* argv[])
 	k->Sacar(E);
 	k->Sacar(E);
 	k->Sacar(E);
-	cout<<k->Mostrar();
+	cout<<k->Mostrar();      */
 	system("pause");
 	return 0;
 }
