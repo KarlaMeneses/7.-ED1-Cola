@@ -15,8 +15,7 @@ ColaM::ColaM(){
 }
 
 bool ColaM::Vacia(){
-	return mem->espacio_ocupado()==0;
-	//return ini==-1;
+	return ini==NULO;
 }
 
 void ColaM::Poner(int E){
@@ -32,35 +31,35 @@ void ColaM::Poner(int E){
 			fin=aux;   //fin=al espacio en la cual comenzo el string
 		}
 	}else{
-		cout<<"No existe espacio en COLA memoria para agregar "<<E<<endl;
+		cout<<"Error\n";
 	}
-//	mem->mostrar_memoria();    //test
-//	cout<<"ini1: "<<ini<<endl; //test
-//	cout<<"Fin1: "<<fin<<endl; //test
-//	cout<<"espacio ocupado: " <<mem->espacio_ocupado()<<endl;
-//	cout<<"espacio disponible: " <<mem->espacio_disponible()<<endl;
+	mem->mostrar_memoria();    //test
+	cout<<"ini1: "<<ini<<endl; //test
+	cout<<"Fin1: "<<fin<<endl; //test
+	cout<<"espacio ocupado: " <<mem->espacio_ocupado()<<endl;
+	cout<<"espacio disponible: " <<mem->espacio_disponible()<<endl;
 }
 
 void ColaM::Sacar(int &E){
 	if (!Vacia()) {
+	   //	cout<<"init: "<<ini<<endl;
 		E=mem->obtener_dato(ini,elementoC);//45
 		int x=ini;
-		//ini=mem->obtener_dato(ini,sigC);  /// init sigue siendo 0
+	   //	cout<<"initxx: "<<x<<endl;
+		//ini=mem->obtener_dato(ini,sigC);  ///////
 		mem->delete_espacio(x);
-		fin=fin-2;
-		if (fin==-2) {
-			fin=0;
-		}
-	}else{
-		cout<<"La memoria (COLA) ya esta vacia no se puede sacar elemento"<<endl;
-    }
+		mem->mostrar_memoria();    //test
+		cout<<"ini1: "<<ini<<endl; //test
+		cout<<"Fin1: "<<fin<<endl; //test
+		cout<<"espacio ocupado: " <<mem->espacio_ocupado()<<endl;
+		cout<<"espacio disponible: " <<mem->espacio_disponible()<<endl;
+	}
 }
 
 int ColaM::Primero(){	if (!Vacia()) {		return mem->obtener_dato(ini,elementoC);
 	}else{		cout<<"Error\n";
 	}}string ColaM::Mostrar(){
 	int x=mem->espacio_ocupado()/2;
-	cout<<"Numero: "<<x<<endl;
 	int g=0;
 	string k="COLA: << ";
 	while (x>0){
@@ -72,9 +71,4 @@ int ColaM::Primero(){	if (!Vacia()) {		return mem->obtener_dato(ini,elementoC)
 		g+=2;
 	}
 	cout<<k<<" <<"<<endl;
-	cout<<"ini1: "<<ini<<endl; //test
-	cout<<"Fin1: "<<fin<<endl; //test
-	cout<<"espacio ocupado: " <<mem->espacio_ocupado()<<endl;
-	cout<<"espacio disponible: " <<mem->espacio_disponible()<<endl;
-	mem->mostrar_memoria();    //test
 }

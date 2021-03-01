@@ -8,7 +8,7 @@
 #include<string>       //without this it makes an error in type string!
 using namespace std;   //without this it makes an error in type string!
 
-const int MAX=12;
+const int MAX=11;
 const int NULO=-1;
 
 const char separadores[12]={' ',',','.','-','_',':',';','"','¿','?','!','¡'};
@@ -36,7 +36,6 @@ class CSMemoria {
 		int espacio_ocupado();
 		bool dir_libre(int dir);
 		void mostrar_memoria();
-		void desplazamiento(int dir);
 
 };
 #endif

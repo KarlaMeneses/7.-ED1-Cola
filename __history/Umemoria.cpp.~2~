@@ -84,25 +84,19 @@ CSMemoria::CSMemoria(){
 }
 
 direccion CSMemoria::new_espacio(string cadena_id){
-	if (espacio_disponible()>0) { //last modified
-		int d=Libre;
-		int dir=Libre;
-		int ñ=0;
-		trim(cadena_id);
-		int cant=numero_ids(cadena_id);
-		for (int i=0; i < cant-1; i++) {
-			MEM[d].Id=obtener_id(cadena_id,ñ);
-			d=MEM[d].Link;
-		}
-		Libre=MEM[d].Link;
-		MEM[d].Link=-1;
+	int d=Libre;
+	int dir=Libre;
+	int ñ=0;
+	trim(cadena_id);
+	int cant=numero_ids(cadena_id);
+	for (int i=0; i < cant-1; i++) {
 		MEM[d].Id=obtener_id(cadena_id,ñ);
-		return dir;
-	}else{
-		//cout<<"No existe espacio en la memoria"<<endl;
-		return NULO;
-    }
-
+		d=MEM[d].Link;
+	}
+	Libre=MEM[d].Link;
+	MEM[d].Link=-1;
+	MEM[d].Id=obtener_id(cadena_id,ñ);
+	return dir;
 }
 
 void CSMemoria::poner_dato(int dir,string cadena_id,int valor ){
@@ -137,7 +131,16 @@ int CSMemoria::obtener_dato(int dir,string cadena_id){
 }
 
 void CSMemoria::delete_espacio(int dir){  //
-	desplazamiento(dir);
+	cout<<"dir init"<<dir<<endl;
+	int x=dir;
+	//while(MEM[x].Link!=-1){
+	   //	x=MEM[x].Link;
+   //	}
+
+	//MEM[x].Link=Libre;
+	//Libre=dir;
+	//----
+	 desplazamiento(x)  ;
 }
 
 void CSMemoria::desplazamiento(int dir){
@@ -145,25 +148,24 @@ void CSMemoria::desplazamiento(int dir){
 	int d=dir;
 	int g=MEM[dir].Link; //1-->2
 	g=obtener_dato(g,"->sig");
+	//g=MEM[dir].Link;
 	while (c>0){
 		while(MEM[d].Link!=-1){
 			poner_dato(d,"->elemento",obtener_dato(g,"->elemento"));
 			d=MEM[d].Link;
 		}
+		poner_dato(d,"->sig",obtener_dato(g,"->sig"));
 		d=g;
 		g=obtener_dato(g,"->sig");
 		c--;
 	}
-	poner_dato(d-1,"->sig",-1);
-
 	poner_dato(d,"->elemento",0);
 	MEM[d].Id="";
 	poner_dato(d,"->sig",0);
 	MEM[d+1].Id="";
-	if (d+1<MAX-1) {
-		MEM[d+1].Link=d+2;
-	}
+	MEM[d+1].Link=d+2;
 	Libre=d;
+	cout<<"Libre: "<<Libre<<endl;
 }
 
 int CSMemoria::espacio_disponible(){
@@ -223,5 +225,4 @@ void CSMemoria::mostrar_memoria(){
 		<< "+" << endl;
 	cout.fill(' ');
 	//setw() = espacios en blancos hasta cierto punto
-    cout<<"Libre: "<<Libre<<endl;
 }

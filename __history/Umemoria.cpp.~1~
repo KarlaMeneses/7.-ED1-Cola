@@ -84,25 +84,19 @@ CSMemoria::CSMemoria(){
 }
 
 direccion CSMemoria::new_espacio(string cadena_id){
-	if (espacio_disponible()>0) { //last modified
-		int d=Libre;
-		int dir=Libre;
-		int ñ=0;
-		trim(cadena_id);
-		int cant=numero_ids(cadena_id);
-		for (int i=0; i < cant-1; i++) {
-			MEM[d].Id=obtener_id(cadena_id,ñ);
-			d=MEM[d].Link;
-		}
-		Libre=MEM[d].Link;
-		MEM[d].Link=-1;
+	int d=Libre;
+	int dir=Libre;
+	int ñ=0;
+	trim(cadena_id);
+	int cant=numero_ids(cadena_id);
+	for (int i=0; i < cant-1; i++) {
 		MEM[d].Id=obtener_id(cadena_id,ñ);
-		return dir;
-	}else{
-		//cout<<"No existe espacio en la memoria"<<endl;
-		return NULO;
-    }
-
+		d=MEM[d].Link;
+	}
+	Libre=MEM[d].Link;
+	MEM[d].Link=-1;
+	MEM[d].Id=obtener_id(cadena_id,ñ);
+	return dir;
 }
 
 void CSMemoria::poner_dato(int dir,string cadena_id,int valor ){
@@ -126,44 +120,22 @@ void CSMemoria::poner_dato(int dir,string cadena_id,int valor ){
 int CSMemoria::obtener_dato(int dir,string cadena_id){
 	int z=dir;
 	bool ex=false;
-	cadena_id=Eliminar_flecha(cadena_id); //last modified
+	Eliminar_flecha(cadena_id);
 	while(z!=NULO){
 		if (MEM[z].Id == cadena_id){
 			return MEM[z].Dato;
 		}
 		z=MEM[z].Link;
-		//cout<<"last"<<endl;
 	}
 }
 
 void CSMemoria::delete_espacio(int dir){  //
-	desplazamiento(dir);
-}
-
-void CSMemoria::desplazamiento(int dir){
-	int c=(espacio_ocupado()/2)-1;
-	int d=dir;
-	int g=MEM[dir].Link; //1-->2
-	g=obtener_dato(g,"->sig");
-	while (c>0){
-		while(MEM[d].Link!=-1){
-			poner_dato(d,"->elemento",obtener_dato(g,"->elemento"));
-			d=MEM[d].Link;
-		}
-		d=g;
-		g=obtener_dato(g,"->sig");
-		c--;
+	int x=dir;
+	while(MEM[x].Link!=-1){
+		x=MEM[x].Link;
 	}
-	poner_dato(d-1,"->sig",-1);
-
-	poner_dato(d,"->elemento",0);
-	MEM[d].Id="";
-	poner_dato(d,"->sig",0);
-	MEM[d+1].Id="";
-	if (d+1<MAX-1) {
-		MEM[d+1].Link=d+2;
-	}
-	Libre=d;
+	MEM[x].Link=Libre;
+	Libre=dir;
 }
 
 int CSMemoria::espacio_disponible(){
@@ -177,7 +149,7 @@ int CSMemoria::espacio_disponible(){
 }
 
 int CSMemoria::espacio_ocupado(){ ///La inversa
-	int c =MAX - espacio_disponible();//last modified
+	int c =(MAX+1) - espacio_disponible();
 	return c;
 }
 
@@ -223,5 +195,4 @@ void CSMemoria::mostrar_memoria(){
 		<< "+" << endl;
 	cout.fill(' ');
 	//setw() = espacios en blancos hasta cierto punto
-    cout<<"Libre: "<<Libre<<endl;
 }
