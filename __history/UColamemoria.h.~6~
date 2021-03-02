@@ -26,6 +26,5 @@ class ColaM{
 		void Poner(int E);
 		void Sacar(int &E);
 		int Primero();		string Mostrar();
-        void Mostrarmemoria();
 };
 #endif

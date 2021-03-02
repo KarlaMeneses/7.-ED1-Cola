@@ -44,12 +44,13 @@ int _tmain(int argc, _TCHAR* argv[])
 //	k->Poner(125);
 	k->Mostrar();
 	invertir(k);
-	//cout<<"new cola"<<endl;
-	k->Mostrar();
-	//k->Poner(85);
-//	k->Poner(95);
+	cout<<"new cola"<<endl;
 	//k->Mostrar();
-   // k->Mostrar();
+	k->Poner(85);
+	k->Poner(95);
+	k->Mostrar();
+	invertir(k);
+    k->Mostrar();
 	/* { Implementación con lista puntero}
 	ColaLP* k=new ColaLP();
 	k->Poner(10);

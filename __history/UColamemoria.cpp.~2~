@@ -1,27 +1,0 @@
-//---------------------------------------------------------------------------
-
-#pragma hdrstop
-
-#include "UColamemoria.h"
-//---------------------------------------------------------------------------
-#pragma package(smart_init)
-
-ColaM::ColaM(){
-	mem=new CSMemoria();
-}
-
-bool ColaM::Vacia(){
-
-}
-
-void ColaM::Poner(int E){
-
-}
-
-void ColaM::Sacar(int &E){
-
-}
-
-int ColaM::Primero(){}string ColaM::Mostrar(){
-
-}

@@ -59,28 +59,22 @@ void ColaM::Sacar(int &E){
 int ColaM::Primero(){	if (!Vacia()) {		return mem->obtener_dato(ini,elementoC);
 	}else{		cout<<"Error\n";
 	}}string ColaM::Mostrar(){
-   //	mem->mostrar_memoria();    //test
-	int E;
-	ColaM* aux=new ColaM();
+	int x=mem->espacio_ocupado()/2;
+	cout<<"Numero: "<<x<<endl;
+	int g=0;
 	string k="COLA: << ";
-	while (!Vacia()){
-		//E=mem->obtener_dato(g,elementoC);
-		Sacar(E);///
-		k=k+to_string(E);
-		cout<<"sca: "<<E<<endl;
-		aux->Poner(E);
-		if (!Vacia()) {
+	while (x>0){
+		k=k+to_string(mem->obtener_dato(g,elementoC));
+		if (x>1) {
 			k=k+',';
 		}
+		x--;
+		g+=2;
 	}
-	while (!aux->Vacia()){
-		aux->Sacar(E);
-		Poner(E);
-	}
-	return k+" <<";
-   /*	cout<<"ini1: "<<ini<<endl; //test
+	cout<<k<<" <<"<<endl;
+	cout<<"ini1: "<<ini<<endl; //test
 	cout<<"Fin1: "<<fin<<endl; //test
 	cout<<"espacio ocupado: " <<mem->espacio_ocupado()<<endl;
-	cout<<"espacio disponible: " <<mem->espacio_disponible()<<endl;   */
-	//mem->mostrar_memoria();    //test
+	cout<<"espacio disponible: " <<mem->espacio_disponible()<<endl;
+	mem->mostrar_memoria();    //test
 }

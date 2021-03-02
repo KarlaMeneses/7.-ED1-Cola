@@ -62,6 +62,7 @@ int ColaM::Primero(){	if (!Vacia()) {		return mem->obtener_dato(ini,elementoC)
    //	mem->mostrar_memoria();    //test
 	int E;
 	ColaM* aux=new ColaM();
+	//cout<<"Numero: "<<x<<endl;
 	string k="COLA: << ";
 	while (!Vacia()){
 		//E=mem->obtener_dato(g,elementoC);

@@ -22,34 +22,28 @@
 #include "UColavectorcircular.h"
 using namespace std;
 
-void invertir(ColaM* k);
+void invertir(ColaVC* k);
 int _tmain(int argc, _TCHAR* argv[])
-{    //{ Implementación con simulación de Memoria}
+{    /*{ Implementación con simulación de Memoria}
 	ColaM* k=new ColaM();
 	k->Poner(45);
 	k->Poner(55);
 	k->Poner(65);
 	k->Poner(75);
-//	k->Poner(85);
-//	k->Poner(95);
-//	k->Poner(105);
-//	k->Poner(115);
-//	k->Poner(125);
-//	k->Mostrar(); //mostrar siempre al inicio
-//	int E;
-//	k->Sacar(E);
-//	k->Sacar(E);
-//	k->Poner(105);
-//	k->Poner(115);
-//	k->Poner(125);
-	k->Mostrar();
-	invertir(k);
-	//cout<<"new cola"<<endl;
-	k->Mostrar();
-	//k->Poner(85);
-//	k->Poner(95);
-	//k->Mostrar();
-   // k->Mostrar();
+	k->Poner(85);
+	k->Poner(95);
+	k->Poner(105);
+	k->Poner(115);
+	k->Poner(125);
+	k->Mostrar(); //mostrar siempre al inicio
+	int E;
+	k->Sacar(E);
+	k->Sacar(E);
+	k->Poner(105);
+	k->Poner(115);
+	k->Poner(125);
+	k->Mostrar();     */
+
 	/* { Implementación con lista puntero}
 	ColaLP* k=new ColaLP();
 	k->Poner(10);
@@ -114,7 +108,6 @@ int _tmain(int argc, _TCHAR* argv[])
 	k->Sacar(E);
 	cout<<k->Mostrar()<<endl;   */
 
-	/* //incompleto!!!!!
 	ColaVC* k=new ColaVC();
 	k->Poner(10);
 	//cout<<k->Mostrar()<<endl;
@@ -139,27 +132,25 @@ int _tmain(int argc, _TCHAR* argv[])
 	return 0;
 }
 
-void invertir(ColaM* k){//modifica los valores de k
+void invertir(ColaVC* k){//modifica los valores de k
 	int E;
-	string r="";
-	string d="";
-	while (!k->Vacia()) { //saca de la cola y lo pone en el string
+	int g=0;
+	while (!k->Vacia()) {
 		k->Sacar(E);
-		r=to_string(E)+r;
-		if (!k->Vacia()) {
-			r=','+r;
-		}
+		cout<<"mm: "<<E<<endl;
+		g++;
 	}
-	while (r.length()>0){
-		if (isdigit(r[0])) {
-			d=d+r[0];
-			r=r.substr(1,r.length());
-		}else{
-			int oo=stoi(d);
-			d="";
-			k->Poner(oo);
-			r=r.substr(1,r.length());
-		}
-	}
-	k->Poner(stoi(d));
+	cout<<"g: "<<g<<endl;
+	k->Poner()
+	/*k->Sacar(E);
+	cout<<"mm: "<<E<<endl;
+		k->Sacar(E);
+	cout<<"mm: "<<E<<endl;
+		k->Sacar(E);
+	cout<<"mm: "<<E<<endl;
+		k->Sacar(E);
+	cout<<"mm: "<<E<<endl;
+			k->Sacar(E);
+	cout<<"mm: "<<E<<endl;             */
+
 }

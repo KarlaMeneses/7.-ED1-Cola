@@ -130,6 +130,18 @@
             <DependentOn>UColamemoria.h</DependentOn>
             <BuildOrder>2</BuildOrder>
         </CppCompile>
+        <CppCompile Include="UColapuntero.cpp">
+            <DependentOn>UColapuntero.h</DependentOn>
+            <BuildOrder>10</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="UColavectorcircular.cpp">
+            <DependentOn>UColavectorcircular.h</DependentOn>
+            <BuildOrder>12</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="UColavectordesplazamiento.cpp">
+            <DependentOn>UColavectordesplazamiento.h</DependentOn>
+            <BuildOrder>11</BuildOrder>
+        </CppCompile>
         <CppCompile Include="UListamemoria.cpp">
             <DependentOn>UListamemoria.h</DependentOn>
             <BuildOrder>7</BuildOrder>

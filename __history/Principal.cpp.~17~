@@ -14,10 +14,12 @@
 #include <iostream>
 #include "UColamemoria.h"
 #include "UColalistapuntero.h"
+#include "UColalistavector.h"
+#include "UColalistamemoria.h"
 using namespace std;
 
 int _tmain(int argc, _TCHAR* argv[])
-{   /* { Implementación con simulación de Memoria}
+{    /*{ Implementación con simulación de Memoria}
 	ColaM* k=new ColaM();
 	k->Poner(45);
 	k->Poner(55);
@@ -32,10 +34,10 @@ int _tmain(int argc, _TCHAR* argv[])
 	int E;
 	k->Sacar(E);
 	k->Sacar(E);
-	k->Poner(105);
-	k->Poner(115);
-	k->Poner(125);
-	k->Mostrar();  */
+//	k->Poner(105);
+//	k->Poner(115);
+//	k->Poner(125);
+	k->Mostrar();     */
 
 	/* { Implementación con lista puntero}
 	ColaLP* k=new ColaLP();
@@ -52,7 +54,33 @@ int _tmain(int argc, _TCHAR* argv[])
 	k->Sacar(E);
 	cout<<k->Mostrar();  */
 
+	/* { Implementación con lista vector}
+	ColaLP* k=new ColaLP();
+	k->Poner(10);
+	k->Poner(20);
+	k->Poner(30);
+	k->Poner(40);
+	cout<<k->Mostrar();
+	int E;
+	k->Sacar(E);
+	cout<<k->Mostrar();
+	k->Sacar(E);
+	cout<<k->Mostrar();
+	k->Sacar(E);
+	cout<<k->Mostrar();  */
 
+	ColaLSM* k=new ColaLSM();
+	k->Poner(10);
+	k->Poner(20);
+   	k->Poner(30);
+	k->Poner(40);
+	cout<<k->Mostrar();
+	int E;
+	k->Sacar(E);
+	k->Sacar(E);
+	k->Sacar(E);
+	k->Sacar(E);
+	cout<<k->Mostrar();
 	system("pause");
 	return 0;
 }
