@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2021/02/28 15:48:38.000.815,=C:\Users\Karla\Documents\Embarcadero\Studio\Projects\File1.cpp</Transaction>
+    <Transaction>2021/02/28 15:48:38.000.454,=C:\Users\Karla\Documents\Embarcadero\Studio\Projects\Project1PCH1.h</Transaction>
+    <Transaction>2021/02/28 15:49:07.000.527,C:\Users\Karla\Documents\Embarcadero\Studio\Projects\File1.cpp=C:\Users\Karla\Documents\Embarcadero\Studio\Projects\Principal.cpp</Transaction>
+    <Transaction>2021/02/28 15:49:25.000.027,C:\Users\Karla\Documents\Embarcadero\Studio\Projects\Project1PCH1.h=C:\Users\Karla\Documents\Embarcadero\Studio\Projects\Practicacola.h</Transaction>
+    <Transaction>2021/02/28 15:49:28.000.129,C:\Users\Karla\Documents\Embarcadero\Studio\Projects\Project1.cbproj=C:\Users\Karla\Documents\Embarcadero\Studio\Projects\Practicacola.cbproj</Transaction>
+    <Transaction>2021/02/28 15:57:12.000.978,=C:\Users\Karla\Documents\Embarcadero\Studio\Projects\Unit1.cpp</Transaction>
+    <Transaction>2021/02/28 15:57:27.000.369,C:\Users\Karla\Documents\Embarcadero\Studio\Projects\Unit1.h=C:\Users\Karla\Documents\Embarcadero\Studio\Projects\UColamemoria.h</Transaction>
+    <Transaction>2021/02/28 15:57:27.000.369,C:\Users\Karla\Documents\Embarcadero\Studio\Projects\Unit1.cpp=C:\Users\Karla\Documents\Embarcadero\Studio\Projects\UColamemoria.cpp</Transaction>
+    <Transaction>2021/02/28 16:00:18.000.647,=C:\Users\Karla\Documents\GitHub\7. ED1-Cola\Umemoria.cpp</Transaction>
+    <Transaction>2021/02/28 23:00:33.000.116,=C:\Users\Karla\Documents\GitHub\7. ED1-Cola\Unit1.cpp</Transaction>
+    <Transaction>2021/02/28 23:00:57.000.475,C:\Users\Karla\Documents\GitHub\7. ED1-Cola\UColalistapuntero.h=C:\Users\Karla\Documents\GitHub\7. ED1-Cola\Unit1.h</Transaction>
+    <Transaction>2021/02/28 23:00:57.000.475,C:\Users\Karla\Documents\GitHub\7. ED1-Cola\UColalistapuntero.cpp=C:\Users\Karla\Documents\GitHub\7. ED1-Cola\Unit1.cpp</Transaction>
+    <Transaction>2021/02/28 23:01:01.000.926,=C:\Users\Karla\Documents\GitHub\7. ED1-Cola\Unit1.cpp</Transaction>
+    <Transaction>2021/02/28 23:01:13.000.132,C:\Users\Karla\Documents\GitHub\7. ED1-Cola\UColalistamemoria.cpp=C:\Users\Karla\Documents\GitHub\7. ED1-Cola\Unit1.cpp</Transaction>
+    <Transaction>2021/02/28 23:01:13.000.132,C:\Users\Karla\Documents\GitHub\7. ED1-Cola\UColalistamemoria.h=C:\Users\Karla\Documents\GitHub\7. ED1-Cola\Unit1.h</Transaction>
+    <Transaction>2021/02/28 23:01:18.000.698,=C:\Users\Karla\Documents\GitHub\7. ED1-Cola\Unit1.cpp</Transaction>
+    <Transaction>2021/02/28 23:01:40.000.414,C:\Users\Karla\Documents\GitHub\7. ED1-Cola\UColalistavector.cpp=C:\Users\Karla\Documents\GitHub\7. ED1-Cola\Unit1.cpp</Transaction>
+    <Transaction>2021/02/28 23:01:40.000.414,C:\Users\Karla\Documents\GitHub\7. ED1-Cola\UColalistavector.h=C:\Users\Karla\Documents\GitHub\7. ED1-Cola\Unit1.h</Transaction>
+    <Transaction>2021/02/28 23:03:44.000.845,=C:\Users\Karla\Documents\GitHub\7. ED1-Cola\UListavector.cpp</Transaction>
+    <Transaction>2021/02/28 23:03:44.000.777,=C:\Users\Karla\Documents\GitHub\7. ED1-Cola\UListamemoria.cpp</Transaction>
+    <Transaction>2021/02/28 23:03:44.000.826,=C:\Users\Karla\Documents\GitHub\7. ED1-Cola\UListapuntero.cpp</Transaction>
+    <Transaction>2021/03/01 15:48:51.000.703,=C:\Users\Karla\Documents\GitHub\7. ED1-Cola\Unit1.cpp</Transaction>
+    <Transaction>2021/03/01 15:49:08.000.385,C:\Users\Karla\Documents\GitHub\7. ED1-Cola\UColapuntero.cpp=C:\Users\Karla\Documents\GitHub\7. ED1-Cola\Unit1.cpp</Transaction>
+    <Transaction>2021/03/01 15:49:08.000.385,C:\Users\Karla\Documents\GitHub\7. ED1-Cola\UColapuntero.h=C:\Users\Karla\Documents\GitHub\7. ED1-Cola\Unit1.h</Transaction>
+    <Transaction>2021/03/02 09:09:37.000.650,=C:\Users\Karla\Documents\GitHub\7. ED1-Cola\Unit1.cpp</Transaction>
+    <Transaction>2021/03/02 09:09:44.000.208,=C:\Users\Karla\Documents\GitHub\7. ED1-Cola\Unit2.cpp</Transaction>
+    <Transaction>2021/03/02 09:10:25.000.053,C:\Users\Karla\Documents\GitHub\7. ED1-Cola\Unit1.cpp=C:\Users\Karla\Documents\GitHub\7. ED1-Cola\UColavectordesplazamiento.cpp</Transaction>
+    <Transaction>2021/03/02 09:10:25.000.053,C:\Users\Karla\Documents\GitHub\7. ED1-Cola\Unit1.h=C:\Users\Karla\Documents\GitHub\7. ED1-Cola\UColavectordesplazamiento.h</Transaction>
+    <Transaction>2021/03/02 09:10:44.000.494,C:\Users\Karla\Documents\GitHub\7. ED1-Cola\Unit2.cpp=C:\Users\Karla\Documents\GitHub\7. ED1-Cola\UColavectorcircular.cpp</Transaction>
+    <Transaction>2021/03/02 09:10:44.000.494,C:\Users\Karla\Documents\GitHub\7. ED1-Cola\Unit2.h=C:\Users\Karla\Documents\GitHub\7. ED1-Cola\UColavectorcircular.h</Transaction>
+  </Transactions>
+</BorlandProject>

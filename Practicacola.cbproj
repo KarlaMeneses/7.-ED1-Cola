@@ -57,6 +57,8 @@
         <Multithreaded>true</Multithreaded>
         <SanitizedProjectName>Practicacola</SanitizedProjectName>
         <_TCHARMapping>char</_TCHARMapping>
+        <IncludePath>Listas\;Cola\;Dicola\;$(IncludePath)</IncludePath>
+        <ILINK_LibraryPath>Listas\;Cola\;Dicola\;$(ILINK_LibraryPath)</ILINK_LibraryPath>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Base_Win32)'!=''">
         <PackageImports>adortl;appanalytics;bcbie;bcbsmp;bindcomp;bindcompdbx;bindcompfmx;bindcompvcl;bindengine;CloudService;CustomIPTransport;dbexpress;dbrtl;dbxcds;DbxClientDriver;DbxCommonDriver;DBXInterBaseDriver;DBXMySQLDriver;DBXSqliteDriver;dsnap;dsnapcon;dsnapxml;FireDAC;FireDACADSDriver;FireDACCommon;FireDACCommonDriver;FireDACCommonODBC;FireDACIBDriver;FireDACMSAccDriver;FireDACMySQLDriver;FireDACPgDriver;FireDACSqliteDriver;fmx;fmxase;fmxdae;fmxFireDAC;fmxobj;IndyCore;IndyIPClient;IndyIPCommon;IndyIPServer;IndyProtocols;IndySystem;inet;inetdb;inetdbxpress;RESTBackendComponents;RESTComponents;rtl;soapmidas;soaprtl;soapserver;svn;tethering;vcl;vclactnband;vcldb;vcldsnap;vclFireDAC;vclie;vclimg;VCLRESTComponents;VclSmp;vcltouch;vclwinx;vclx;xmlrtl;$(PackageImports)</PackageImports>
@@ -66,13 +68,11 @@
         <VerInfo_Locale>1033</VerInfo_Locale>
         <UWP_CppLogo44>$(BDS)\bin\Artwork\Windows\UWP\cppreg_UwpDefault_44.png</UWP_CppLogo44>
         <UWP_CppLogo150>$(BDS)\bin\Artwork\Windows\UWP\cppreg_UwpDefault_150.png</UWP_CppLogo150>
-        <BCC_PCHName_Clang>Practicacola.h</BCC_PCHName_Clang>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Base_Win64)'!=''">
         <PackageImports>adortl;appanalytics;bcbie;bcbsmp;bindcomp;bindcompdbx;bindcompfmx;bindcompvcl;bindengine;CloudService;CustomIPTransport;dbexpress;dbrtl;dbxcds;DbxClientDriver;DbxCommonDriver;DBXInterBaseDriver;DBXMySQLDriver;DBXSqliteDriver;dsnap;dsnapcon;dsnapxml;FireDAC;FireDACADSDriver;FireDACCommon;FireDACCommonDriver;FireDACCommonODBC;FireDACIBDriver;FireDACMSAccDriver;FireDACMySQLDriver;FireDACPgDriver;FireDACSqliteDriver;fmx;fmxase;fmxdae;fmxFireDAC;fmxobj;IndyCore;IndyIPClient;IndyIPCommon;IndyIPServer;IndyProtocols;IndySystem;inet;inetdb;inetdbxpress;RESTBackendComponents;RESTComponents;rtl;soapmidas;soaprtl;soapserver;tethering;vcl;vclactnband;vcldb;vcldsnap;vclFireDAC;vclie;vclimg;VCLRESTComponents;VclSmp;vcltouch;vclwinx;vclx;xmlrtl;$(PackageImports)</PackageImports>
         <UWP_CppLogo44>$(BDS)\bin\Artwork\Windows\UWP\cppreg_UwpDefault_44.png</UWP_CppLogo44>
         <UWP_CppLogo150>$(BDS)\bin\Artwork\Windows\UWP\cppreg_UwpDefault_150.png</UWP_CppLogo150>
-        <BCC_PCHName_Clang>Practicacola.h</BCC_PCHName_Clang>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Cfg_1)'!=''">
         <BCC_OptimizeForSpeed>false</BCC_OptimizeForSpeed>
@@ -107,6 +107,54 @@
         <BCC_UseClassicCompiler>false</BCC_UseClassicCompiler>
     </PropertyGroup>
     <ItemGroup>
+        <CppCompile Include="Cola\UColalistamemoria.cpp">
+            <DependentOn>Cola\UColalistamemoria.h</DependentOn>
+            <BuildOrder>3</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="Cola\UColalistapuntero.cpp">
+            <DependentOn>Cola\UColalistapuntero.h</DependentOn>
+            <BuildOrder>4</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="Cola\UColalistavector.cpp">
+            <DependentOn>Cola\UColalistavector.h</DependentOn>
+            <BuildOrder>5</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="Cola\UColamemoria.cpp">
+            <DependentOn>Cola\UColamemoria.h</DependentOn>
+            <BuildOrder>6</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="Cola\UColapuntero.cpp">
+            <DependentOn>Cola\UColapuntero.h</DependentOn>
+            <BuildOrder>7</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="Cola\UColavectorcircular.cpp">
+            <DependentOn>Cola\UColavectorcircular.h</DependentOn>
+            <BuildOrder>8</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="Cola\UColavectordesplazamiento.cpp">
+            <DependentOn>Cola\UColavectordesplazamiento.h</DependentOn>
+            <BuildOrder>9</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="Dicola\UDicolalistapuntero.cpp">
+            <DependentOn>Dicola\UDicolalistapuntero.h</DependentOn>
+            <BuildOrder>10</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="Dicola\UDicolalistavector.cpp">
+            <DependentOn>Dicola\UDicolalistavector.h</DependentOn>
+            <BuildOrder>11</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="Listas\UListamemoria.cpp">
+            <DependentOn>Listas\UListamemoria.h</DependentOn>
+            <BuildOrder>12</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="Listas\UListapuntero.cpp">
+            <DependentOn>Listas\UListapuntero.h</DependentOn>
+            <BuildOrder>13</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="Listas\UListavector.cpp">
+            <DependentOn>Listas\UListavector.h</DependentOn>
+            <BuildOrder>14</BuildOrder>
+        </CppCompile>
         <PCHCompile Include="Practicacola.h">
             <BuildOrder>0</BuildOrder>
             <PCH>true</PCH>
@@ -114,49 +162,9 @@
         <CppCompile Include="Principal.cpp">
             <BuildOrder>1</BuildOrder>
         </CppCompile>
-        <CppCompile Include="UColalistamemoria.cpp">
-            <DependentOn>UColalistamemoria.h</DependentOn>
-            <BuildOrder>5</BuildOrder>
-        </CppCompile>
-        <CppCompile Include="UColalistapuntero.cpp">
-            <DependentOn>UColalistapuntero.h</DependentOn>
-            <BuildOrder>4</BuildOrder>
-        </CppCompile>
-        <CppCompile Include="UColalistavector.cpp">
-            <DependentOn>UColalistavector.h</DependentOn>
-            <BuildOrder>6</BuildOrder>
-        </CppCompile>
-        <CppCompile Include="UColamemoria.cpp">
-            <DependentOn>UColamemoria.h</DependentOn>
-            <BuildOrder>2</BuildOrder>
-        </CppCompile>
-        <CppCompile Include="UColapuntero.cpp">
-            <DependentOn>UColapuntero.h</DependentOn>
-            <BuildOrder>10</BuildOrder>
-        </CppCompile>
-        <CppCompile Include="UColavectorcircular.cpp">
-            <DependentOn>UColavectorcircular.h</DependentOn>
-            <BuildOrder>12</BuildOrder>
-        </CppCompile>
-        <CppCompile Include="UColavectordesplazamiento.cpp">
-            <DependentOn>UColavectordesplazamiento.h</DependentOn>
-            <BuildOrder>11</BuildOrder>
-        </CppCompile>
-        <CppCompile Include="UListamemoria.cpp">
-            <DependentOn>UListamemoria.h</DependentOn>
-            <BuildOrder>7</BuildOrder>
-        </CppCompile>
-        <CppCompile Include="UListapuntero.cpp">
-            <DependentOn>UListapuntero.h</DependentOn>
-            <BuildOrder>8</BuildOrder>
-        </CppCompile>
-        <CppCompile Include="UListavector.cpp">
-            <DependentOn>UListavector.h</DependentOn>
-            <BuildOrder>9</BuildOrder>
-        </CppCompile>
         <CppCompile Include="Umemoria.cpp">
             <DependentOn>Umemoria.h</DependentOn>
-            <BuildOrder>3</BuildOrder>
+            <BuildOrder>2</BuildOrder>
         </CppCompile>
         <BuildConfiguration Include="Release">
             <Key>Cfg_2</Key>

@@ -1,0 +1,144 @@
+//---------------------------------------------------------------------------
+
+#pragma hdrstop
+
+#include "UColamemoria.h"
+//---------------------------------------------------------------------------
+#pragma package(smart_init)
+//added
+#include <iostream>
+
+ColaM::ColaM(){
+	mem=new CSMemoria();
+	int ini=-1;
+	int fin=-1;
+	cout<<"a: "<<finc()<<endl;
+	cout<<"b: "<<inic()<<endl;
+}
+
+bool ColaM::Vacia(){
+	return mem->espacio_ocupado()==0;
+	//return ini==-1;
+}
+
+void ColaM::Poner(int E){
+	int aux=mem->new_espacio(datoC); //Pedir Espacio de memoria para Nodo
+	if (aux!=NULO) {
+		mem->poner_dato(aux,elementoC,E);
+		mem->poner_dato(aux,sigC,NULO);
+		if (Vacia()){
+			ini=aux;
+			fin=aux;
+		}else{
+			mem->poner_dato(fin,sigC,aux);
+			fin=aux;   //fin=al espacio en la cual comenzo el string
+		}
+	}else{
+		cout<<"No existe espacio en COLA memoria para agregar "<<E<<endl;
+	}
+	cout<<"despues de poner MEMORIA:  "<<E<<endl;
+	mem->mostrar_memoria();    //test
+//	cout<<"ini1: "<<ini<<endl; //test
+//	cout<<"Fin1: "<<fin<<endl; //test
+//	cout<<"espacio ocupado: " <<mem->espacio_ocupado()<<endl;
+//	cout<<"espacio disponible: " <<mem->espacio_disponible()<<endl;
+}
+
+void ColaM::Sacar(int &E){ ///it's okay aparently
+	if (!Vacia()) {
+		E=mem->obtener_dato(ini,elementoC);//45
+		//cout<<"obtener:  "<<E<<endl;
+		int x=ini;
+		//ini=mem->obtener_dato(ini,sigC);  /// init sigue siendo 0
+		mem->delete_espacio(x);
+	 /*	if (ini == fin){
+			ini = fin = NULO;
+		}else{
+			ini = mem->obtener_dato(ini, sigC);
+		} */
+		//cout<<"fin obtener: "<<E<<endl;
+	   /*	fin=fin-2;
+		if (fin==-2) {
+			fin=0;
+		}  */
+	}else{
+		cout<<"La memoria (COLA) ya esta vacia no se puede sacar elemento"<<endl;
+	}
+	cout<<"MEMORIA despues de sacar:  "<<endl;
+	mem->mostrar_memoria();    //test
+}
+
+int ColaM::Primero(){	if (!Vacia()) {		return mem->obtener_dato(ini,elementoC);
+	}else{		cout<<"Error\n";
+	}}string ColaM::Mostrar(){
+string k="COLA: << ";
+	ColaM* aux=new ColaM();
+	cout<<"ini4 de aux"<<aux->inic()<<endl;
+	cout<<"fin4 de aux"<<aux->finc()<<endl;
+
+
+/*
+	mem->mostrar_memoria();    //test
+	int E;
+	//Sacar(E);
+	//cout<<E<<endl;
+	ColaM* aux=new ColaM();
+
+		   ///
+
+	while (!Vacia()){
+		//E=mem->obtener_dato(g,elementoC);
+		Sacar(E);///
+		//mem->mostrar_memoria();
+		k=k+to_string(E);
+	   //	cout<<"sca: "<<E<<endl;
+		//aux->Poner(E);
+
+	   //	cout<<"sca7777: "<<E<<endl;
+		if (!Vacia()) {
+			k=k+',';
+		}
+	}
+	cout<<"ini1: "<<ini<<endl; //test
+	cout<<"Fin1: "<<fin<<endl; //test
+	cout<<"secind;  "<<endl;
+   //	mem->mostrar_memoria();
+   /*	while (!aux->Vacia()){
+
+		aux->Sacar(E);
+		//mem->mostrar_memoria();
+		cout<<"sca22: "<<E<<endl;
+		Poner(E);
+		//mem->mostrar_memoria();
+	}
+	//cout<<"ini1 de aux"<<aux->inic()<<endl;
+	//aux->Sacar(E);
+	//cout<<"sacado22: "<<E<<endl;
+	//mem->mostrar_memoria();
+	//cout<<"ini2 de aux"<<aux->inic()<<endl;
+	//aux->Sacar(E);
+	//cout<<"sacado22: "<<E<<endl;
+	//mem->mostrar_memoria();
+	//cout<<"ini3 de aux"<<aux->inic()<<endl;
+	//aux->Sacar(E);
+	//cout<<"sacado22: "<<E<<endl;
+   //	mem->mostrar_memoria();
+	cout<<"ini4 de aux"<<aux->inic()<<endl;
+	cout<<"fin4 de aux"<<aux->finc()<<endl;
+	cout<<"ini1: "<<ini<<endl; //test
+	cout<<"Fin1: "<<fin<<endl; //test
+	cout<<"espacio ocupado: " <<mem->espacio_ocupado()<<endl;
+	cout<<"espacio disponible: " <<mem->espacio_disponible()<<endl;
+
+
+	*/
+	return k+" <<";
+
+	//mem->mostrar_memoria();    //test
+}
+int ColaM::inic(){
+	return ini;
+}
+int ColaM::finc(){
+	return fin;
+}

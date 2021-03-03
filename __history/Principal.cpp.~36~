@@ -9,25 +9,17 @@
 #endif
 
 #include <stdio.h>
+
 //added
 #include <iostream>
 #include "UColamemoria.h"
-//{ Implementación con simulación de Memoria} ColaM* k=new ColaM();
 
 #include "UColalistapuntero.h"
-// { Implementación con lista puntero} ColaLP* k=new ColaLP();
-
 #include "UColalistavector.h"
-// { Implementación con lista vector} ColaLV* k=new ColaLV();
-
 #include "UColalistamemoria.h"
-// { Implementación con lista simulacion de memoria} ColaLSM* k=new ColaLSM();
 
 #include "UColavectordesplazamiento.h"
-// { Implementación con vector desplazamiento } ColaVD* k=new ColaVD();
-
 #include "UColavectorcircular.h"
-
 
 //////////////////
 #include "UDicolalistapuntero.h"
@@ -39,7 +31,89 @@ using namespace std;
 void menu1();
 void invertir(ColaM* k);
 int _tmain(int argc, _TCHAR* argv[])
-{
+{    /*{ Implementación con simulación de Memoria}
+	ColaM* k=new ColaM();
+int E;
+	k->Poner(85);
+	k->Poner(95);
+	k->Sacar(E);
+	k->Poner(75);
+	k->Poner(105);
+	k->Sacar(E);
+	k->Sacar(E);
+	k->Poner(115);
+	k->Poner(125);
+	k->Poner(24);;
+	invertir(k);
+	cout<<"new cola"<<endl;
+	cout<<k->Mostrar()<<endl;
+	 */
+
+	/* { Implementación con lista puntero}
+	ColaLP* k=new ColaLP();
+	k->Poner(10);
+	k->Poner(20);
+	k->Poner(30);
+	k->Poner(40);
+	cout<<k->Mostrar();
+	int E;
+	k->Sacar(E);
+	cout<<k->Mostrar();
+	k->Sacar(E);
+	cout<<k->Mostrar();
+	k->Sacar(E);
+	cout<<k->Mostrar();  */
+
+	/* { Implementación con lista vector}
+	ColaLV* k=new ColaLV();
+	k->Poner(10);
+	cout<<k->Mostrar();
+	k->Poner(20);
+	k->Poner(30);
+	k->Poner(40);
+	cout<<k->Mostrar();
+	int E;
+	k->Sacar(E);
+	cout<<k->Mostrar();
+	k->Sacar(E);
+	cout<<k->Mostrar();
+	k->Sacar(E);
+	cout<<k->Mostrar(); */
+
+	/* { Implementación con lista simulacion de memoria}
+	ColaLSM* k=new ColaLSM();
+	k->Poner(10);
+	k->Poner(20);
+	k->Poner(30);
+	k->Poner(40);
+	cout<<k->Mostrar();
+	int E;
+	k->Sacar(E);
+	k->Sacar(E);
+	k->Sacar(E);
+	k->Sacar(E);
+	cout<<k->Mostrar();      */
+
+	/* { Implementación con vector desplazamiento }
+	ColaVD* k=new ColaVD();
+	k->Poner(10);
+	cout<<k->Mostrar()<<endl;
+	k->Poner(20);
+	cout<<k->Mostrar()<<endl;
+	k->Poner(30);
+	cout<<k->Mostrar()<<endl;
+	k->Poner(40);
+	cout<<k->Mostrar()<<endl;
+	int E;
+	k->Sacar(E);
+	cout<<k->Mostrar()<<endl;
+	k->Sacar(E);
+	cout<<k->Mostrar()<<endl;
+	k->Sacar(E);
+	cout<<k->Mostrar()<<endl;
+	k->Sacar(E);
+	cout<<k->Mostrar()<<endl;   */
+
 	/* //incompleto!!!!!
 	ColaVC* k=new ColaVC();
 	k->Poner(10);

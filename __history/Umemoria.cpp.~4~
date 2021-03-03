@@ -48,8 +48,8 @@ int numero_ids(string cadena_id){
 }
 
 string obtener_id(string cadena_id,int &ñ){//
-	string palabra="";
-	int i=0;
+	string palabra="";   //"hola  ,  como estan ,????"
+	int i=0;             // 0123456789
 	int aux=ñ;
 	string prueba=cadena_id;
 	while (palabra==""){
@@ -101,7 +101,8 @@ direccion CSMemoria::new_espacio(string cadena_id){
 	}else{
 		//cout<<"No existe espacio en la memoria"<<endl;
 		return NULO;
-	}
+    }
+
 }
 
 void CSMemoria::poner_dato(int dir,string cadena_id,int valor ){
@@ -131,6 +132,7 @@ int CSMemoria::obtener_dato(int dir,string cadena_id){
 			return MEM[z].Dato;
 		}
 		z=MEM[z].Link;
+		//cout<<"last"<<endl;
 	}
 }
 
@@ -139,26 +141,24 @@ void CSMemoria::delete_espacio(int dir){  //
 }
 
 void CSMemoria::desplazamiento(int dir){
-	int c=(espacio_ocupado()/2)-1;  //-1
-	int d=dir; //0
+	int c=(espacio_ocupado()/2)-1;
+	int d=dir;
 	int g=MEM[dir].Link; //1-->2
-	g=obtener_dato(g,"->sig"); //dir 2
+	g=obtener_dato(g,"->sig");
 	while (c>0){
 		while(MEM[d].Link!=-1){
-			int t=obtener_dato(g,"->elemento");
-			poner_dato(d,"->elemento",t);
+			poner_dato(d,"->elemento",obtener_dato(g,"->elemento"));
 			d=MEM[d].Link;
 		}
-		d=g; //d=4
-		g=obtener_dato(g,"->sig");//6
-		c--;//3-2-1
+		d=g;
+		g=obtener_dato(g,"->sig");
+		c--;
 	}
 	poner_dato(d-1,"->sig",-1);
-	MEM[d].Dato=0;    ///important!!!
-	//poner_dato(d,"->elemento",0);
+
+	poner_dato(d,"->elemento",0);
 	MEM[d].Id="";
-	MEM[d+1].Dato=0;   ///important!!!
-	//poner_dato(d,"->sig",0);
+	poner_dato(d,"->sig",0);
 	MEM[d+1].Id="";
 	if (d+1<MAX-1) {
 		MEM[d+1].Link=d+2;

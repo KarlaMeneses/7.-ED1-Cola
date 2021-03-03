@@ -20,21 +20,24 @@
 
 #include "UColavectordesplazamiento.h"
 #include "UColavectorcircular.h"
+
+//////////////////
+#include "UDicolalistapuntero.h"
 using namespace std;
 
 void invertir(ColaM* k);
 int _tmain(int argc, _TCHAR* argv[])
 {    //{ Implementación con simulación de Memoria}
-	ColaM* k=new ColaM();
-	k->Poner(45);
-	k->Poner(55);
-	k->Poner(65);
-	k->Poner(75);
-//	k->Poner(85);
-//	k->Poner(95);
-//	k->Poner(105);
-//	k->Poner(115);
-//	k->Poner(125);
+	/*ColaM* k=new ColaM();
+//	k->Poner(0);
+//	k->Poner(0);
+//	k->Poner(0);
+//	k->Poner(0);
+	k->Poner(85);
+	k->Poner(95);
+	k->Poner(105);
+	k->Poner(115);
+	k->Poner(125);
 //	k->Mostrar(); //mostrar siempre al inicio
 //	int E;
 //	k->Sacar(E);
@@ -42,15 +45,17 @@ int _tmain(int argc, _TCHAR* argv[])
 //	k->Poner(105);
 //	k->Poner(115);
 //	k->Poner(125);
-	k->Mostrar();
-	invertir(k);
-	cout<<"new cola"<<endl;
-	//k->Mostrar();
-	k->Poner(85);
-	k->Poner(95);
-	k->Mostrar();
-	invertir(k);
-    k->Mostrar();
+	cout<<k->Mostrar()<<endl;
+	//invertir(k);
+//	cout<<"new cola"<<endl;
+	cout<<k->Mostrar()<<endl;
+	cout<<k->Mostrar()<<endl;
+	cout<<k->Mostrar()<<endl;
+	//k->Poner(85);
+   //	k->Poner(95);
+   //	cout<<k->Mostrar()<<endl;
+   // k->Mostrar();      */
+
 	/* { Implementación con lista puntero}
 	ColaLP* k=new ColaLP();
 	k->Poner(10);
@@ -135,6 +140,21 @@ int _tmain(int argc, _TCHAR* argv[])
 	cout<<k->Mostrar()<<endl;
 	k->Sacar(E);
 	cout<<k->Mostrar()<<endl;  */
+
+
+	//DICOLA
+	DicolaLP* k=new DicolaLP();
+	k->Poner(10);
+	cout<<k->Mostrar()<<endl;
+	k->Poner(20);
+	cout<<k->Mostrar()<<endl;
+	k->Poner(30);
+	cout<<k->Mostrar()<<endl;
+	k->Poner(40);
+	cout<<k->Mostrar()<<endl;
+	cout<<k->Mostrar()<<endl;
+	cout<<k->Mostrar()<<endl;
+	cout<<k->Mostrar()<<endl;
 
 	system("pause");
 	return 0;
