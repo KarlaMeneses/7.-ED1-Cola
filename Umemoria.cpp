@@ -104,16 +104,30 @@ direccion CSMemoria::new_espacio(string cadena_id){
 	}
 }
 
-void CSMemoria::poner_dato(int dir,string cadena_id,int valor ){
+void CSMemoria::poner_dato(int dir,string cadena_id,int valor,int ebx){
 	trim(cadena_id);
 	int z=dir;  //dir direccion de la variable E.g: dir=3
 	if ((cadena_id[0] == '-') && (cadena_id[1] == '>')) {
 		cadena_id=Eliminar_flecha(cadena_id);
-		while (z != NULO){  //mientras que mi direccion de variable sea diferente a fin de direccion (-1)
-			if (MEM[z].Id == cadena_id) {
-				MEM[z].Dato= valor;//????
+		if (ebx==118) {
+			int c=(espacio_ocupado()/2)-1;//3
+			int ebx=Libre-2;//8
+			while (c>0){
+				MEM[ebx].Dato=MEM[ebx-2].Dato;
+				MEM[ebx+1].Dato=ebx+2;
+				ebx=ebx-2;
+				c=c-2;
 			}
-			z=MEM[z].Link;
+			MEM[Libre-1].Dato=-1;
+			MEM[dir].Dato=valor;
+			MEM[dir+1].Dato=dir+2;
+		}else{
+			while (z != NULO){  //mientras que mi direccion de variable sea diferente a fin de direccion (-1)
+				if (MEM[z].Id == cadena_id) {
+					MEM[z].Dato= valor;//????
+				}
+				z=MEM[z].Link;
+			}
 		}
 	}else{
 		cout << "ERROR, Verificar el valor asignado: "<<cadena_id<<endl;
@@ -135,7 +149,21 @@ int CSMemoria::obtener_dato(int dir,string cadena_id){
 }
 
 void CSMemoria::delete_espacio(int dir){  //
-	desplazamiento(dir);
+	if (dir==Libre-2) {
+		int x = dir;
+		while (MEM[x].Link != -1){
+			MEM[x].Dato=0;
+			MEM[x].Id="";
+			x = MEM[x].Link;
+		}
+		//MEM[x-1].Link=-1;
+		MEM[x].Dato=0;
+		MEM[x].Id="";
+		MEM[x].Link = Libre;
+		Libre = dir;
+	}else{
+		desplazamiento(dir);
+	}
 }
 
 void CSMemoria::desplazamiento(int dir){
@@ -144,16 +172,16 @@ void CSMemoria::desplazamiento(int dir){
 	int g=MEM[dir].Link; //1-->2
 	g=obtener_dato(g,"->sig"); //dir 2
 	while (c>0){
-		while(MEM[d].Link!=-1){
+		//while(MEM[d].Link!=-1){
 			int t=obtener_dato(g,"->elemento");
-			poner_dato(d,"->elemento",t);
+			poner_dato(d,"->elemento",t,0);
 			d=MEM[d].Link;
-		}
+	   //	}
 		d=g; //d=4
 		g=obtener_dato(g,"->sig");//6
 		c--;//3-2-1
 	}
-	poner_dato(d-1,"->sig",-1);
+	poner_dato(d-1,"->sig",-1,0);
 	MEM[d].Dato=0;    ///important!!!
 	//poner_dato(d,"->elemento",0);
 	MEM[d].Id="";

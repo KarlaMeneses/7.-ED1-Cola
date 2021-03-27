@@ -1,0 +1,32 @@
+//---------------------------------------------------------------------------
+
+#ifndef UColaprioridadH
+#define UColaprioridadH
+//---------------------------------------------------------------------------
+#include <iostream>
+#include <string>
+
+#include "UDicolavectorcircular.h"
+
+using namespace std;
+
+const int MAX_COLA = 3;
+
+class ColaPrioridad{
+private:
+	DicolaVC* vc;// esto es lo que puede cambiar
+	int* vf;  //frecuencia
+	int cola_act;
+	int cant;
+
+public:
+	ColaPrioridad();
+	bool Vacia();
+	int Primero();
+	void Poner(int E, int prioridad);
+	void Asignar_frec_prioridad(int frec, int prioridad);
+	void Sacar(int &E);
+	string Mostrar();
+
+};
+#endif

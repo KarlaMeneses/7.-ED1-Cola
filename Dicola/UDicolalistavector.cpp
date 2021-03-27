@@ -11,8 +11,8 @@
 using namespace std;
 
 DicolaLV::DicolaLV(){
-	ListaV* l=new ListaV();
-	//l->mostrar();
+	l=new ListaV();
+	//cout<<l->mostrar();
 }
 
 bool DicolaLV::Vacia(){
@@ -37,9 +37,9 @@ int DicolaLV::Primero(){	int E;	l->recupera(l->fin(),E);	return E;}void Di
 }
 
 int DicolaLV::Ultimo(){	int E;	l->recupera(l->primero(),E);	return E;}string DicolaLV::Mostrar(){
-	//l->mostrar();
+	cout<<l->mostrar()<<endl;
 	int E;
-	string k="<< ";   /*
+	string k="Dicola: << ";
 	DicolaLV* aux=new DicolaLV();
 	while (!Vacia()){
 		Sacar(E);
@@ -52,6 +52,6 @@ int DicolaLV::Ultimo(){	int E;	l->recupera(l->primero(),E);	return E;}stri
 	while (!aux->Vacia()){
 		aux->Sacar(E);
 		Poner(E);
-	}              */
+	}
 	return k+" <<";
 }

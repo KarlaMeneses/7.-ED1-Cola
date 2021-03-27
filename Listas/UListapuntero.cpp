@@ -14,7 +14,7 @@ using namespace std;
 
 ListaP::ListaP(){
 	longitud=0;
-	PtrElementos=NULL; // No tiene direccion fisica asignada - Apunta a nulo
+	PTR_LISTA=NULL; // No tiene direccion fisica asignada - Apunta a nulo
 }                      //ptrElem----> ---//
 
 direccionP ListaP::fin(){
@@ -22,7 +22,7 @@ direccionP ListaP::fin(){
 		cout << "Error: La lista esta vacia\n";
 	}
 	else{
-		direccionP x=PtrElementos; //x apunta a lo mismo que apunta ptrelem
+		direccionP x=PTR_LISTA; //x apunta a lo mismo que apunta ptrelem
 		direccionP PtrFin; //cuando solo se declara apunta a null
 		while (x!=NULL){
 			PtrFin=x; //ptrfin apunta a lo que apunta x
@@ -33,7 +33,7 @@ direccionP ListaP::fin(){
 }
 direccionP ListaP::primero(){
 	if (!vacia()) {
-		return PtrElementos;   //apunta al primero ptrelem
+		return PTR_LISTA;   //apunta al primero ptrelem
 	}
 	else{
 		//cout << "Error: La lista esta vacia\n";
@@ -64,7 +64,7 @@ direccionP ListaP::anterior(direccionP dir){
 			cout << "Error de direccion no existe el anterior\n";
 		}
 		else{
-			direccionP x=PtrElementos;
+			direccionP x=PTR_LISTA;
 			direccionP ant=NULL;
 			while (x!=NULL){
 				if (x==dir) {
@@ -99,14 +99,14 @@ void ListaP::inserta(direccionP dir,int element){
 		x->elemento=element;
 		x->sig=NULL;
 		if (vacia()) {
-			PtrElementos=x;
+			PTR_LISTA=x;
 			longitud=1;
 		}
 		else{
 			longitud++;
 			if (dir==primero()) {
 				x->sig=dir;
-				PtrElementos=x;//variable apunta al primer elemento
+				PTR_LISTA=x;//variable apunta al primer elemento
 			}
 			else{
 				direccionP ant=anterior(dir); //nodo anterior del ingresado
@@ -124,9 +124,9 @@ void ListaP::inserta_primero(int element){
 	NodoL* x=new NodoL; //creacion del nodo que no apunta a null
 	if (x!=NULL) {
 		x->elemento=element;
-		x->sig=PtrElementos;
+		x->sig=PTR_LISTA;
 		longitud++;
-		PtrElementos=x;
+		PTR_LISTA=x;
 	}
 	else{
 		cout << "Error: No existe espacio en la memoria\n";
@@ -138,7 +138,7 @@ void ListaP::inserta_ultimo(int element){
 		x->elemento=element;
 		x->sig=NULL;
 		if (longitud==0) {//al principio
-			PtrElementos=x;
+			PTR_LISTA=x;
 		}
 		else{
 			fin()->sig=x;
@@ -154,9 +154,9 @@ void ListaP::suprime(direccionP dir){
 		cout << "Error: La lista esta vacia\n";
 	}
 	else{
-		if (dir==PtrElementos) { //primer nodo
-			direccionP x=PtrElementos;
-			PtrElementos=PtrElementos->sig;
+		if (dir==PTR_LISTA) { //primer nodo
+			direccionP x=PTR_LISTA;
+			PTR_LISTA=PTR_LISTA->sig;
 			delete(x);//Elimina la memoria del nodo
 		}
 		else{
@@ -185,7 +185,7 @@ void ListaP::modifica(direccionP dir,int element){	if (vacia()) {		cout << "Er
 		cout<<'>'<<endl;
 		}  */
 	string s = "[";
-	direccionP aux = PtrElementos;
+	direccionP aux = PTR_LISTA;
 	while (aux != NULL) {
 		int el = aux->elemento;
 		s += to_string(el);

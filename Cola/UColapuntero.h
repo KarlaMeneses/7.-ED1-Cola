@@ -10,11 +10,11 @@ struct NodoC{
 	int elemento;
 	NodoC* sig;  //Puntero a Nodo
 };
-typedef NodoC* direccion;
+//typedef NodoC* direccion;
 class ColaP{
 	private:
-		direccion ini;
-		direccion fin;
+		NodoC*  ini;
+		NodoC*  fin;
 	public:
 		ColaP();
 		bool Vacia();

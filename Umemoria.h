@@ -29,7 +29,7 @@ class CSMemoria {
 	public:
 		CSMemoria();
 		direccion new_espacio(string cadena_id);
-		void poner_dato(int dir,string cadena_id,int valor );
+		void poner_dato(int dir,string cadena_id,int valor,int ebx);
 		int obtener_dato(int dir,string cadena_id);
 		void delete_espacio(int dir);
 		int espacio_disponible();

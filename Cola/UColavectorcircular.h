@@ -19,5 +19,6 @@ class ColaVC{
 		void Poner(int E);
 		void Sacar(int &E);
 		int Primero(); // Tipoelemento		string Mostrar();
+		void concatenar(ColaVC* cola1, ColaVC* cola2, ColaVC* Cola3); //&cola3
 };
 #endif

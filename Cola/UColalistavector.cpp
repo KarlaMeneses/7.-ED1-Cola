@@ -11,6 +11,7 @@ using namespace std;
 
 ColaLV::ColaLV(){
 	ListaV* l=new ListaV();
+       //	l->mostrar();
 }
 
 bool ColaLV::Vacia(){

@@ -4,6 +4,9 @@
 #define UDicolalistavectorH
 //---------------------------------------------------------------------------
 #include "UListavector.h"
+//added
+#include<string>     //without this it makes an error in type string!
+using namespace std; //without this it makes an error in type string!
 
 class DicolaLV{
 	private:

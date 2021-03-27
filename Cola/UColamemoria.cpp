@@ -22,13 +22,13 @@ bool ColaM::Vacia(){
 void ColaM::Poner(int E){
 	int aux=mem->new_espacio(datoC); //Pedir Espacio de memoria para Nodo
 	if (aux!=NULO) {
-		mem->poner_dato(aux,elementoC,E);
-		mem->poner_dato(aux,sigC,NULO);
+		mem->poner_dato(aux,elementoC,E,0);
+		mem->poner_dato(aux,sigC,NULO,0);
 		if (Vacia()){
 			ini=aux;
 			fin=aux;
 		}else{
-			mem->poner_dato(fin,sigC,aux);
+			mem->poner_dato(fin,sigC,aux,0);
 			fin=aux;   //fin=al espacio en la cual comenzo el string
 		}
 	}else{

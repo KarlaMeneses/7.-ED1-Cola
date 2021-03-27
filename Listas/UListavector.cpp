@@ -9,7 +9,6 @@
 #include <iostream>
 ListaV::ListaV(){
 	longitud=0;
-	cout<<longitud<<endl;
 }
 
 direccion ListaV::fin(){
@@ -17,7 +16,8 @@ direccion ListaV::fin(){
 		return longitud-1;
 	}
 	else{
-		cout << "Error: La lista esta vacia\n";
+		cout << "Error: La lista esta vacia( fin() )\n";
+
 	}
 }
 
@@ -26,8 +26,8 @@ direccion ListaV::primero(){
 		return 0;
 	}
 	else{
-		cout << "Error: La lista esta vacia\n";
-	    return -1;
+		//cout << "Error: La lista esta vacia ( primero() )\n";
+		return -1;
 	}
 }
 
@@ -94,16 +94,17 @@ void ListaV::inserta(direccion dir, int element ){
 		elementos[0]=element;
 		longitud++;
 		return; //added
-	}
-	if (dir>=0 && dir<=longitud-1) {  //[55][1][2][3]
-		for (int i = longitud; i > dir; i--) {
-			elementos[i]=elementos[i-1];
+	} else {
+		if (dir>=0 && dir<=longitud-1) {  //[55][1][2][3]
+			for (int i = longitud; i > dir; i--) {
+				elementos[i]=elementos[i-1];
+			}
+			elementos[dir]=element;
+			longitud++;//check! if it isn't at the beginning of all.
+		}              //aumentar la cajita al vector para mover todo luego.
+		else{
+			cout << "Error de direccion\n";
 		}
-		elementos[dir]=element;
-		longitud++;//check! if it isn't at the beginning of all.
-	}              //aumentar la cajita al vector para mover todo luego.
-	else{
-		cout << "Error de direccion\n";
 	}
 }
 
@@ -164,18 +165,16 @@ void ListaV::modifica(direccion dir, int element){
 	}
 }
 
-void ListaV::mostrar(){
-	string lista;
-	cout <<'<';
-	int K=longitud;//prueba
+string ListaV::mostrar(){
+	string lista="Lista vector: [";
 	for (int i = 0; i < longitud; i++) {
 		int a=elementos[i];
-		cout<<a;
+		lista+=to_string(a);
 		if (i<longitud-1) {
-			cout << ',';
+			lista+=',';
 		}
 	}
-	cout<<'>'<<endl;
+	return lista+"]";
 }
 
 direccion ListaV::localiza(int element){  //posicion de element

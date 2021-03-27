@@ -14,20 +14,21 @@ direccion ColaVC::siguiente(int dir){
 	else
 		return dir + 1;
 }
-// METODOS PUNLICOS DE LA CLASE COLAVC
+// METODOS PUBLICOS DE LA CLASE COLAVC
 ColaVC::ColaVC(){
-	fin=0;
+	fin=-1;    //fin=0;
 	ini=0;	v = new int[MAXVC];}
 
 bool ColaVC::Vacia(){
-	return ini==fin;
+	return siguiente(fin)==ini;
 }
 
 void ColaVC::Poner(int E){
-	 if (siguiente(fin) != ini){
-		v[fin]=E;
+	 if (siguiente(siguiente(fin))  != ini){ //siguiente(fin) != ini
+		v[siguiente(fin)]=E; //v[fin]=E;
 		fin = siguiente(fin);
 	 }
+	 //mi fin tendra el valor de la casilla perdida
 }
 
 void ColaVC::Sacar(int &E){
@@ -44,7 +45,7 @@ int ColaVC::Primero(){	if (!Vacia()) {		return v[ini];
 	ColaVC* aux=new ColaVC();
 	while (!Vacia()){
 		Sacar(E);
-		//cout<<"INI: "<<ini<<endl;
+		cout<<"INI: "<<ini<<endl;
 		aux->Poner(E);
 		k=k+to_string(E);
 		if (!Vacia()) {
@@ -63,6 +64,31 @@ int ColaVC::Primero(){	if (!Vacia()) {		return v[ini];
 //	cout<<"sig: "<<siguiente(5)<<endl;
 //	cout<<"sig: "<<siguiente(6)<<endl;//si le mando un 6 me devuelve el sig7
 	return k+" <<";
+}
+
+void ColaVC::concatenar(ColaVC* cola1, ColaVC* cola2, ColaVC* cola3){
+	ColaVC* colaAux= new ColaVC();
+	int E;
+	while (!cola1->Vacia()){
+		cola1->Sacar(E);
+		colaAux->Poner(E);
+		cout<<"sacar: "<<E<<endl;
+	}
+	while (!colaAux->Vacia()){
+		colaAux->Sacar(E);
+		cola3->Poner(E);
+		cola1->Poner(E);
+	}
+	while (!cola2->Vacia()){
+		cola2->Sacar(E);
+		colaAux->Poner(E);
+	}
+	while (!colaAux->Vacia()){
+		colaAux->Sacar(E);
+		cola3->Poner(E);
+		cola2->Poner(E);
+	}
+
 }
 
 

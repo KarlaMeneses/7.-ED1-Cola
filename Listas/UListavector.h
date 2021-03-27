@@ -30,7 +30,7 @@ class ListaV{
 		void inserta_ultimo(int element);//
 		void suprime(direccion dir);//
 		void modifica(direccion dir, int element);//
-		void mostrar();//
+		string mostrar();//
 		/////
 		direccion localiza(int element);//
 		void eliminaDato(int element);//

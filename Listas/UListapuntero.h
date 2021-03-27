@@ -9,15 +9,18 @@
 using namespace std; //para el string
 
 struct NodoL{
+	NodoL* ant;
 	int elemento;//Cuando se crea de guarda un espacio con elem y sig en memoria
 	NodoL* sig; //Puntero a nodo
+
 };
 
 typedef NodoL* direccionP;
 
 class ListaP{
 	private:
-		direccionP PtrElementos;
+		//direccionP PtrElementos;
+		NodoL* PTR_LISTA;
 		int longitud;
 	public:
 		ListaP();//
